@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CHnamedata/WhatDaHeck/main/pvp_sword_fighting_anticheatbypass.lua"))()
