@@ -1,1 +1,9 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CHnamedata/WhatDaHeck/main/pvp_sword_fighting_anticheatbypass.lua"))()
+if game.PlaceId==7918735461 then --You use it in this game
+  repstorage=game:GetService("ReplicatedStorage")
+  Anticheat=repstorage.acevents:FindFirstChild("checkState")
+  FakeAnticheat=Instance.new("BindableEvent",repstorage.acevents)
+  FakeAnticheat.Name="checkState"
+  Anticheat:Destroy()
+else
+  warn("Wrong game dumb fuck")
+end
