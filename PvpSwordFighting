@@ -1,9 +1,22 @@
 if game.PlaceId==7918735461 then --You use it in this game
-  repstorage=game:GetService("ReplicatedStorage")
-  Anticheat=repstorage.acevents:FindFirstChild("checkState")
-  FakeAnticheat=Instance.new("BindableEvent",repstorage.acevents)
-  FakeAnticheat.Name="checkState"
-  Anticheat:Destroy()
+	repstorage=game:GetService("ReplicatedStorage")
+	Anticheat=repstorage.acevents:FindFirstChild("checkState")
+	FakeAnticheat=Instance.new("BindableEvent",repstorage.acevents)
+	FakeAnticheat.Name="checkState"
+	Anticheat:Destroy()
+	local mt = getrawmetatable(game)
+	setreadonly(mt,false)
+	local old = mt.__index
+	mt.__index = newcclosure(function(Self,Key,...) 
+		if not checkcaller() and tostring(Self)=="Humanoid" then
+			if Key == "WalkSpeed" then
+				return 16
+			end -- lua metatables are epock
+			return old(Self,Key,...)
+		end
+		return old(Self,Key,...)
+	end)
+	setreadonly(mt,true)
 else
-  warn("Wrong game dumb fuck")
+	warn("Wrong game dumb fuck")
 end
