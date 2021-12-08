@@ -18,5 +18,5 @@ Fucker = hookmetamethod(game, "__namecall", function(Self,ThatTable,...)
 	return Fucker(Self,ThatTable,...)
 end)
 else
-	warn("Wrong game dumb fuck")
+	warn("Wrong game dumb fuck") --yes
 end
