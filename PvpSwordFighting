@@ -17,6 +17,15 @@ Fucker = hookmetamethod(game, "__namecall", function(Self,ThatTable,...)
 	end
 	return Fucker(Self,ThatTable,...)
 end)
+Bypass = hookmetamethod(game, "__namecall", function(Self, Reason,...)
+    local ncm = getnamecallmethod()
+    if Self == game.Players.LocalPlayer and ncm:lower() == "kick" then
+        if Reason=="Exploits detected!" then
+            return BypassScript
+        end
+    end
+    return Bypass(Self,Reason,...)
+end)
 else
 	warn("Wrong game dumb fuck") --yes
 end
