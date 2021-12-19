@@ -1,1 +1,1 @@
---Removed due to shitty anticheat which anyone can bypass in under 2 minutes with some remoteevent logger.
+--Removed due to shitty anticheat which anyone can bypass in under 2 minutes with some lua knowledge.
